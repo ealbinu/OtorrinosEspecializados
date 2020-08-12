@@ -1,0 +1,300 @@
+.gradientblue {
+  background-image: linear-gradient(to left, #19A6A8, #13BBD2);
+}
+.gradientpink {
+  background-image: linear-gradient(to left, #F66565, #E799F3);
+}
+.font {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.blue {
+  color: #19A6A8;
+}
+.pink {
+  color: #F66565;
+}
+strong.pink {
+  color: #E799F3;
+}
+strong.blue {
+  color: #13BBD2;
+}
+/* ---------- */
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.drsimg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  width: 40%;
+  max-width: 600px;
+}
+@media (max-width: 680px) {
+  .drsimg {
+    display: none;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+header .head-blue {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+header .head-pink {
+  width: 40%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media (max-width: 680px) {
+  header .head-pink {
+    width: 60%;
+  }
+}
+header .navbar {
+  background-color: transparent;
+}
+header .navbar-start {
+  margin: 0 auto;
+}
+header .navbar-end {
+  display: none;
+}
+header .navbar-item {
+  color: #fff;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+header .navbar-item:hover,
+header .navbar-item:active,
+header .navbar-item:focus {
+  background: transparent;
+  color: #F66565;
+}
+header .navbar-burger {
+  border-radius: 8px;
+}
+header .navbar-burger span {
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+@media (max-width: 1024px) {
+  header .navbar-menu.is-active {
+    background-image: linear-gradient(to left, #19A6A8, #13BBD2);
+    margin: 0 10px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
+.section {
+  padding-top: 100px;
+}
+#inicio {
+  text-align: center;
+}
+#inicio .logo {
+  max-width: 380px;
+  margin: 0 auto;
+}
+#inicio h2 {
+  color: #E799F3;
+}
+#inicio h2 div {
+  font-weight: 400;
+  color: #19A6A8;
+}
+#nosotros p {
+  margin: 40px 0;
+}
+.bannerA {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 680px) {
+  .bannerA img {
+    max-width: 200%;
+  }
+}
+.bannerA .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.item {
+  padding: 6px;
+  background: #fafafa;
+  border-radius: 8px;
+  margin: 6px;
+}
+.item:before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background-image: linear-gradient(to left, #F66565, #E799F3);
+  display: inline-block;
+  margin-right: 6px;
+}
+#servicios .busca {
+  color: #888;
+  margin: 20px 0;
+}
+#servicios .buscador {
+  border: 4px solid #19A6A8;
+  border-radius: 10px;
+}
+#servicios .buscador input {
+  border-radius: 6px;
+}
+#servicios .buscador input:focus,
+#servicios .buscador input:active {
+  outline: none;
+  border: none;
+}
+#servicios .button {
+  background-image: linear-gradient(to left, #19A6A8, #13BBD2);
+  color: #fff;
+  margin: 10px 0;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-weight: 700;
+}
+@media (max-width: 680px) {
+  #experiencia img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+#convenios img {
+  max-width: 200px;
+  width: 100%;
+}
+#galeria {
+  background-image: url(img/galbg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#galeria .item-gal {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+#galeria .item-gal img {
+  margin: 0;
+  padding: 0;
+}
+#galeria h2 {
+  margin-bottom: 20px;
+}
+.modal .modal-content {
+  border-radius: 20px;
+  width: 90%;
+}
+.modal .modal-content img {
+  line-height: 0;
+}
+address {
+  font-style: normal;
+}
+#contacto .map {
+  background-image: url(img/mapbg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#contacto .map .mapframe {
+  margin: 40px;
+  border-radius: 20px;
+  border: 6px solid #fff;
+  overflow: hidden;
+  background: #EFEEEC;
+}
+#contacto .map .mapframe iframe {
+  line-height: 0;
+  margin: 0;
+  height: 320px;
+}
+#contacto p.pink {
+  margin-top: 30px;
+}
+#contacto p.pink a {
+  color: #F66565;
+}
+#contacto p.pink a:hover {
+  color: #E799F3;
+}
+footer .socials a {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  font-size: 2rem;
+  background-image: linear-gradient(to left, #F66565, #E799F3);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+}
+footer .socials a:hover {
+  background-image: linear-gradient(to left, #19A6A8, #13BBD2);
+}
+footer #footer {
+  padding: 20px;
+  background-image: linear-gradient(to left, #19A6A8, #13BBD2);
+  color: #fff;
+  font-size: 0.9rem;
+}
+footer #footer strong {
+  color: #fff;
+}
+footer #footer a {
+  margin-left: auto;
+  color: #fff;
+}
+@media (max-width: 680px) {
+  footer {
+    text-align: center;
+  }
+}
+.card.aviso .card-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 10px;
+}
+.card.aviso .card-content p {
+  margin: 20px;
+}
+/*# sourceMappingURL=app.css.map */

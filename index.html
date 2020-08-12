@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Otorrinos Especializados de Santa Fé</title>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <meta name="description" content="Somos un Grupo de Especialistas Médicos en Otorrinolaringología."/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/buefy/0.8.20/buefy.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="app/app.css"/>
+  </head>
+  <body>
+    <div id="app"><img class="drsimg" src="app/img/drs.jpg"/>
+      <header>
+        <b-navbar>
+          <template slot="start">
+            <b-navbar-item href="#inicio">Inicio</b-navbar-item>
+            <b-navbar-item href="#nosotros">Nosotros</b-navbar-item>
+            <b-navbar-item href="#servicios">Servicios</b-navbar-item>
+            <b-navbar-item href="#experiencia">Experiencia</b-navbar-item>
+            <b-navbar-item href="#convenios">Convenios</b-navbar-item>
+            <b-navbar-item href="#galeria">Galería</b-navbar-item>
+            <b-navbar-item href="#contacto">Contacto</b-navbar-item>
+          </template>
+        </b-navbar><img class="head-blue" src="app/img/head-blue.svg"/><img class="head-pink" src="app/img/head-pink.svg"/>
+      </header>
+      <section class="section" id="inicio">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-6"><img class="logo" src="app/img/otorrinos-especializados-de-santa-fe.svg" alt="Otorrinos especializados de Santa Fé"/>
+              <h2 class="is-size-3">
+                <div>Somos un Grupo de</div> Especialistas Médicos en Otorrinolaringología.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="nosotros">
+        <div class="container">
+          <div class="columns is-mobile is-vcentered">
+            <div class="column is-5 is-3-mobile"><img class="is-fullwidth" src="app/img/otorrinolaringologia.svg" alt="Otorrinolaringología"/></div>
+            <div class="column is-7 is-9-mobile">
+              <p class="blue is-size-5">La <strong class="pink">Otorrinolaringología</strong> es la especialidad médica que trata las enfermedades relacionadas con el <strong class="blue">oído, nariz y garganta</strong>.</p>
+              <p>Nuestra labor incluye el diagnóstico de enfermedades, trastornos y dolencias mediante diversas pruebas. Algunas enfermedades relacionadas con la especialidad requieren de un tratamiento farmacológico. Otras enfermedades pueden requerir intervenciones quirúrgicas tanto a pacientes adultos o niños.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="bannerA has-text-centered"><img class="is-fullwidth" src="app/img/banner.jpg"/>
+        <div class="text">
+          <h3 class="is-size-4">Atendemos afecciones frecuentes en la población que requieren de atención especializada:</h3>
+          <h3 class="is-size-3 has-text-weight-bold">Oído, Nariz, Garganta y Vías Respiratorias</h3>
+        </div>
+      </div>
+      <section class="section" id="servicios">
+        <div class="container">
+          <h2 class="is-size-2 has-text-weight-bold blue">Servicios</h2>
+          <div class="columns">
+            <div class="column is-6">
+              <h3 class="is-size-4 has-text-weight-bold blue">Diagnósticos</h3>
+              <div class="has-text-centered has-text-weight-bold has-text-centered busca">Busca tu diagnóstico entre nuestros más de 60 servicios</div>
+              <b-input class="buscador" placeholder="Buscar" v-model="diagnosticosFilter"></b-input>
+              <div class="item dia" v-for="item in limitBy(filterBy(_.shuffle(diagnosticos), diagnosticosFilter), 16)">{{item}}</div><a class="is-fullwidth button" href="#contacto" v-if="diagnosticosFilter.length">Contáctanos</a>
+            </div>
+            <div class="column is-6">
+              <h3 class="is-size-4 has-text-weight-bold blue">Cirugías</h3>
+              <div class="item ci" v-for="item in cirugias">{{item}}</div>
+              <h3 class="is-size-4 has-text-weight-bold blue">Alergias</h3>
+              <div class="item al" v-for="item in alergias">{{item}}</div>
+              <h3 class="is-size-4 has-text-weight-bold blue">Audición</h3>
+              <div class="item au" v-for="item in audicion">{{item}}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="experiencia">
+        <div class="container">
+          <h2 class="is-size-2 has-text-weight-bold pink">Experiencia</h2>
+          <div class="columns is-vcentered">
+            <div class="column is-7">
+              <p><strong>En otorrinos especializados nos comprometemos a ofrecer un servicio profesional y de alta calidad.</strong> Por esto nuestros especialistas cuentan con las certificaciones que garantizan una práctica actualizada para los pacientes que cursan con algún problema de salud relacionado con la especialidad.</p>
+            </div>
+            <div class="column is-5 has-text-centered"><img class="is-fullwidth" src="app/img/experiencia.jpg" alt="Experiencia"/></div>
+          </div>
+          <div class="columns is-vcentered">
+            <div class="column is-4 has-text-centered"><img class="is-fullwidth" src="app/img/dra-liliana-elizabeth-hernandez-carpio.jpg" alt="Dra. Liliana Elizabeth Hernández Carpio"/></div>
+            <div class="column is-8">
+              <h3 class="is-size-4 has-text-weight-bold blue">Dra. Liliana Elizabeth Hernández Carpio</h3>
+              <p>Médico Cirujano egresada de La Universidad Panamericana</p>
+            </div>
+          </div>
+          <div class="columns is-vcentered">
+            <div class="column is-4 has-text-centered"><img class="is-fullwidth" src="app/img/dr-jose-antonio-pirron-lozano.jpg" alt="Dr. José Antonio Pirrón Lozano"/></div>
+            <div class="column is-8">
+              <h3 class="is-size-4 has-text-weight-bold blue">Dr. José Antonio Pirrón Lozano</h3>
+              <p>Cuenta con un postgrado en Trastornos Naso-Sinusales</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="convenios">
+        <div class="container">
+          <h2 class="is-size-2 has-text-weight-bold blue">Convenios</h2>
+          <div class="columns is-multiline has-text-centered is-mobile">
+            <div class="column is-4" v-for="i in ['axxa', 'allianz', 'bupa', 'gnp', 'mapfre', 'metlife', 'zurich', 'atlas', 'monterrey']"><img class="is-fullwidth" :src="'app/img/conv/'+i+'.png'" :alt="i"/></div>
+          </div>
+        </div>
+      </section>
+      <div id="galeria">
+        <section class="section">
+          <div class="container">
+            <h2 class="is-size-2 has-text-weight-bold pink">Galería</h2>
+            <div class="columns is-multiline has-text-centered is-mobile">
+              <div class="column is-4" v-for="(i, index) in 12" :key="index">
+                <div class="item-gal" @click="opengal(index)"><img class="is-fullwidth" :src="'app/img/gal/i'+i+'.jpg'" alt="Otorrinos Especializados en Santa Fé"/></div>
+                <div class="modal is-active" v-if="visibleModal(index)" @click="closegal(index)">
+                  <div class="modal-background"></div>
+                  <div class="modal-content animate__animated animate__zoomIn"><img :src="'app/img/gal/i'+i+'.jpg'" alt="Otorrinos Especializados en Santa Fé"/></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="section" id="contacto">
+        <div class="container">
+          <h2 class="is-size-2 has-text-weight-bold blue">Contacto</h2>
+          <div class="columns is-vcentered">
+            <div class="column is-6 map">
+              <div class="mapframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.2808566061412!2d-99.28576468459586!3d19.356987986927322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20735db764145%3A0xb7183a1015e4abe6!2sOtorrinos%20Especializados%20en%20Santa%20Fe!5e0!3m2!1ses-419!2smx!4v1597192027088!5m2!1ses-419!2smx" width="100%" height="420px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+            </div>
+            <div class="column is-6">
+              <address>
+                <p><strong class="pink">Sucursal Santa Fe</strong></p>
+                <p>Av. Vasco de Quiroga No 4299<br/>Piso 9, Consultorio 904, Col Santa Fe<br/>Ciudad de México. (frente a Hospital ABC)</p>
+                <p class="pink">Tel.: <a href="tel:5558121322">55 5812 1322</a><br/>Tel.: <a href="tel:5553437641">55 5343 7641</a></p>
+              </address>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="columns socials is-mobile is-centered is-gapless">
+          <div class="column is-narrow" v-for="item in social"><a :href="item.link"><i :class="item.icon"></i></a></div>
+        </div>
+        <div id="footer">
+          <div class="container">
+            <div class="columns">
+              <p><strong>Otorrinos Especializados de Santa Fé</strong>.  Todos los derechos reservados 2020.</p><a @click="aviso = true">Aviso de privacidad</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <b-modal :active.sync="aviso">
+        <div class="card aviso">
+          <div class="card-content">
+            <h3 class="is-size-3">AVISO DE PRIVACIDAD</h3>
+            <p>1 IDENTIDAD Y DOMICILIO DEL RESPONSABLE. El presente Aviso de Privacidad (en lo sucesivo referido como “Aviso”) establece los términos y condiciones en virtud de los cuales Otorrinos Especializados de Santa Fe (en adelante “El Centro Médico”), con domicilio para oír y recibir notificaciones en Av. Vasco de Quiroga No 4299 Piso 9 Consultorio 904, Col. Santa Fe, Cuajimalpa, Ciudad de México.; en su carácter de Responsable (José Antonio Pirrón Lozano) tratará los datos personales del Titular.</p>
+            <p>2 CONSENTIMIENTO DEL TITULAR. Para efectos de lo dispuesto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la “LFPDP”) y demás legislación aplicable, el Titular manifiesta (i) que el presente Aviso le ha sido dado a conocer por el Responsable, (ii) haber leído, entendido y acordado los términos expuestos en este Aviso, por lo que otorga su consentimiento respecto del tratamiento de sus datos personales.</p>
+            <p>3 DATOS PERSONALES QUE RECABAMOS. El Centro Médico puede recolectar datos personales del Titular mediante la entrega directa y/o personal por cualquier medio de contacto entre el Titular y el Responsable o sus Encargados.</p>
+            <p>El Centro Médico recaba datos personales de identificación, asimismo recaba datos personales sensibles.</p>
+            <p>4 FINALIDAD DE LOS DATOS PERSONALES.</p>
+            <p>FINALIDADES PRIMARIAS. El Centro Médico tratará los datos personales del Titular con la finalidad de llevar a cabo las actividades y gestiones enfocadas al cumplimiento de comunicación derivada de la prestación del servicio; facturación; cobranza; atención a clientes; otorgamiento de garantías y contacto con el cliente.</p>
+            <p>FINALIDADES SECUNDARIAS. Asimismo, El Centro Médico tratará datos personales para otras finalidades como enviar notificación de ofertas, avisos y/o mensajes promocionales; comunicaciones con fines de mercadotecnia, publicidad o telemarketing sobre productos y servicios nuevos o existentes ya sean propios o de socios comerciales; realizar encuestas; estadísticas; estudios de mercado, registros sobre hábitos de consumo a través de herramientas de captura automática de datos, intereses y comportamiento; realizar programas de beneficios e incentivos; participar en redes sociales, chats y/o foros de discusión; participar en eventos, trivias, concursos, rifas, juegos y sorteos; evaluar la calidad de los servicios; y en general para cualquier actividad encaminada a promover, mantener, mejorar y evaluar sus productos y servicios.</p>
+            <p>Puede oponerse al tratamiento de sus datos para las finalidades secundarias a través de los medios puestos a su disposición para el ejercicio de sus derechos ARCO. En caso de no oponerse en un plazo de cinco días hábiles posteriores a que sus datos fueron recabados, se entenderá que ha otorgado su consentimiento</p>
+            <p>5 PROCEDIMIENTO PARA EJERCER LOS DERECHOS ARCO (ACCESO, RECTIFICACIÓN, CANCELACIÓN Y OPOSICIÓN) Y REVOCACIÓN DEL CONSENTIMIENTO. El Titular tiene, en todo momento, derecho de acceder, rectificar y cancelar sus datos, así como de oponerse al tratamiento de los mismos o revocar el consentimiento que haya proporcionado presentando una solicitud en el formato que para tal fin le entregaremos a petición expresa, misma que debe contener la información y documentación siguiente:</p>
+            <p>i Nombre del Titular y domicilio u otro medio para comunicarle la respuesta a su solicitud;</p>
+            <p>ii Los documentos vigentes que acrediten su identidad (copia simple en formato impreso o electrónico de su credencial de elector, pasaporte o Visa) o, en su caso, la representación legal del Titular (copia simple en formato impreso o electrónico de la carta poder simple con firma autógrafa del Titular, el mandatario y sus correspondientes identificaciones oficiales vigentes – credencial de elector, pasaporte o Visa);</p>
+            <p>iii La descripción clara y precisa de los datos respecto de los que busca ejercer alguno de los Derechos ARCO, y Cualquier otro elemento o documento que facilite la localización de los datos personales del Titular.</p>
+            <p>En el caso de las solicitudes de rectificación de datos personales, el Titular deberá también indicar las modificaciones a realizarse y aportar la documentación que sustente su petición.</p>
+            <p>Para dar cumplimiento a la obligación de acceso a sus datos personales, se hará previa acreditación de la identidad del titular o personalidad del representante; poniendo la información a disposición en sitio en el domicilio del Responsable. Se podrá acordar otro medio entre el Titular y el Responsable siempre que la información solicitada así lo permita.</p>
+            <p>Para la petición del formato, recepción y respuesta de las solicitudes para ejercer sus derechos ARCO (ACCESO, RECTIFICACIÓN, CANCELACIÓN Y OPOSICIÓN), la revocación de su consentimiento y los demás derechos previstos en la LFPDP ponemos a su disposición los siguientes medios:</p>
+            <p>Oficina de Protección de Datos PersonalesCorreo electrónico: datos.personales.mx@telefonica.comPresencial: Prolongación Paseo de la Reforma No. 1200 piso 18; Colonia Cruz Manca; Delegación Cuajimalpa, C.P.05349, México, D.F.</p>
+            <p>En caso de que la información proporcionada en su solicitud sea errónea o insuficiente, o bien, no se acompañen los documentos de acreditación correspondientes, podremos solicitarle, dentro de los cinco días hábiles siguientes a la recepción de la solicitud, que aporte los elementos o documentos necesarios para dar trámite a la misma. El Titular contará con diez días hábiles para atender el requerimiento, contados a partir del día siguiente en que lo haya recibido. De no dar respuesta en dicho plazo, se tendrá por no presentada la solicitud correspondiente.</p>
+            <p>El Centro Médico responderá al Titular en un plazo máximo de veinte días hábiles, contados desde la fecha en que se recibió la solicitud a efecto de que, si resulta procedente, haga efectiva la misma dentro de los quince días hábiles siguientes a que se comunique la respuesta. En todos los casos, la respuesta se dará por la misma vía por la que haya presentado su solicitud o en su caso por cualquier otro medio acordado con el Titular. Los plazos antes referidos podrán ser ampliados en términos de la LFPDP.</p>
+            <p>6 LIMITACIÓN DE USO Y DIVULGACIÓN DE LA INFORMACIÓN. El Responsable y/o sus Encargados conservarán los datos personales del Titular durante el tiempo que sea necesario para procesar sus solicitudes de información, productos y/o servicios, así como para mantener los registros contables, financieros y de auditoria en términos de la LFPDP y de la legislación mercantil, fiscal y administrativa vigente.</p>
+            <p>7 LIMITACIÓN DE USO Y DIVULGACIÓN DE LA INFORMACIÓN. El Responsable y/o sus Encargados conservarán los datos personales del Titular durante el tiempo que sea necesario para procesar sus solicitudes de información, productos y/o servicios, términos de la LFPDP y de la legislación mercantil, fiscal y administrativa vigente.</p>
+            <p>Los datos personales recolectados se encontrarán protegidos por medidas de seguridad administrativas, técnicas y físicas adecuadas contra el daño, pérdida, alteración, destrucción o uso, acceso o tratamiento no autorizados, de conformidad con lo dispuesto en la LFPDP y la demás legislación aplicable. No obstante lo señalado anteriormente, El Centro Médico no garantiza que terceros no autorizados no puedan tener acceso a los sistemas físicos o lógicos de los Titulares o del Responsable o en los documentos electrónicos y archivos almacenados en sus sistemas. En consecuencia, El Centro Médico no será en ningún caso responsable de los daños y perjuicios que pudieran derivarse de dicho acceso no autorizado.</p>
+            <p>Usted o su representante legal debidamente acreditado podrán limitar el uso o divulgación de sus datos personales a través de los mismos medios y procedimientos dispuestos para el ejercicio de los Derechos ARCO. Si su solicitud resulta procedente, será registrado en el listado de exclusión dispuesto por El Centro Médico para dejar de recibir información relativa a campañas publicitarias o de mercadotecnia.</p>
+            <p>Asimismo, le asiste el derecho de inscribirse en el Registro Público para Evitar Publicidad (REPEP) de la PROFECO http://repep.profeco.gob.mx</p>
+            <p>En caso de que usted considere que El Centro Médico ha vulnerado su derecho a la protección de sus datos personales, puede acudir al Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (“INAI”).</p>
+            <p>8 CAMBIOS AL AVISO. El Centro Médico se reserva el derecho de actualizar periódicamente el presente Aviso para reflejar los cambios en sus prácticas de información. Es responsabilidad del Titular revisar el contenido del Aviso en el sitio http://www.otorrinosensantafe.com.mx/aviso-de-privacidad o solicitándolo al correo electrónico comunicacion@otorrinosensantafe.com.mx El Responsable entenderá que de no expresar lo contrario, significa que el Titular ha leído, entendido y acordado los términos ahí expuestos, lo que constituye su consentimiento a los cambios y/o actualizaciones respecto al tratamiento de sus datos personales.</p>
+          </div>
+        </div>
+      </b-modal>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <script src="http://unpkg.com/vue2-filters"></script>
+    <script src="https://unpkg.com/lodash"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

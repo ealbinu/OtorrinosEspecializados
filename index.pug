@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Otorrinos Especializados de Santa Fé
+        link(rel="icon" type="image/png" href="favicon.png")
+        meta(name="description" content="Somos un Grupo de Especialistas Médicos en Otorrinolaringología.")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/buefy/0.8.20/buefy.min.css")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.2.0/css/all.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&display=swap")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css")
+        link(rel="stylesheet", href="app/app.css")
+    body
+        #app
+            img(src="app/img/drs.jpg").drsimg
+            header
+                b-navbar
+                    template(slot="start")
+                        b-navbar-item(href="#inicio" ) Inicio
+                        b-navbar-item(href="#nosotros" ) Nosotros
+                        b-navbar-item(href="#servicios" ) Servicios
+                        b-navbar-item(href="#experiencia" ) Experiencia
+                        b-navbar-item(href="#convenios" ) Convenios
+                        b-navbar-item(href="#galeria" ) Galería
+                        b-navbar-item(href="#contacto" ) Contacto
+                img(src="app/img/head-blue.svg").head-blue
+                img(src="app/img/head-pink.svg").head-pink
+
+            section.section#inicio
+                .container
+                    .columns
+                        .column.is-6
+                            img(src="app/img/otorrinos-especializados-de-santa-fe.svg", alt="Otorrinos especializados de Santa Fé").logo
+                            h2.is-size-3 #[div Somos un Grupo de] Especialistas Médicos en Otorrinolaringología.
+            section.section#nosotros
+                .container
+                    .columns.is-mobile.is-vcentered
+                        .column.is-5.is-3-mobile: img(src="app/img/otorrinolaringologia.svg", alt="Otorrinolaringología").is-fullwidth
+                        .column.is-7.is-9-mobile
+                            p.blue.is-size-5 La #[strong.pink Otorrinolaringología] es la especialidad médica que trata las enfermedades relacionadas con el #[strong.blue oído, nariz y garganta].
+                            p Nuestra labor incluye el diagnóstico de enfermedades, trastornos y dolencias mediante diversas pruebas. Algunas enfermedades relacionadas con la especialidad requieren de un tratamiento farmacológico. Otras enfermedades pueden requerir intervenciones quirúrgicas tanto a pacientes adultos o niños.
+            
+            .bannerA.has-text-centered
+                img(src="app/img/banner.jpg").is-fullwidth
+                .text
+                    h3.is-size-4 Atendemos afecciones frecuentes en la población que requieren de atención especializada:
+                    h3.is-size-3.has-text-weight-bold Oído, Nariz, Garganta y Vías Respiratorias
+            
+            section.section#servicios
+                .container
+                    h2.is-size-2.has-text-weight-bold.blue Servicios
+                    .columns
+                        .column.is-6
+                            h3.is-size-4.has-text-weight-bold.blue Diagnósticos
+                            .has-text-centered.has-text-weight-bold.has-text-centered.busca Busca tu diagnóstico entre nuestros más de 60 servicios
+                            b-input(placeholder="Buscar" v-model="diagnosticosFilter").buscador
+                            div(v-for="item in limitBy(filterBy(_.shuffle(diagnosticos), diagnosticosFilter), 16)").item.dia {{item}}
+                            a(href="#contacto" v-if="diagnosticosFilter.length").is-fullwidth.button Contáctanos
+                        .column.is-6
+                            h3.is-size-4.has-text-weight-bold.blue Cirugías
+                            div(v-for="item in cirugias").item.ci {{item}}
+                            h3.is-size-4.has-text-weight-bold.blue Alergias
+                            div(v-for="item in alergias").item.al {{item}}
+                            h3.is-size-4.has-text-weight-bold.blue Audición
+                            div(v-for="item in audicion").item.au {{item}}
+            section.section#experiencia
+                .container
+                    h2.is-size-2.has-text-weight-bold.pink Experiencia
+                    .columns.is-vcentered
+                        .column.is-7
+                            p #[strong En otorrinos especializados nos comprometemos a ofrecer un servicio profesional y de alta calidad.] Por esto nuestros especialistas cuentan con las certificaciones que garantizan una práctica actualizada para los pacientes que cursan con algún problema de salud relacionado con la especialidad.
+                        .column.is-5.has-text-centered: img(src="app/img/experiencia.jpg", alt="Experiencia").is-fullwidth
+                    .columns.is-vcentered
+                        .column.is-4.has-text-centered: img(src="app/img/dra-liliana-elizabeth-hernandez-carpio.jpg", alt="Dra. Liliana Elizabeth Hernández Carpio").is-fullwidth
+                        .column.is-8
+                            h3.is-size-4.has-text-weight-bold.blue Dra. Liliana Elizabeth Hernández Carpio
+                            p Médico Cirujano egresada de La Universidad Panamericana
+                    .columns.is-vcentered
+                        .column.is-4.has-text-centered: img(src="app/img/dr-jose-antonio-pirron-lozano.jpg", alt="Dr. José Antonio Pirrón Lozano").is-fullwidth
+                        .column.is-8
+                            h3.is-size-4.has-text-weight-bold.blue Dr. José Antonio Pirrón Lozano
+                            p Cuenta con un postgrado en Trastornos Naso-Sinusales
+
+            section.section#convenios
+                .container
+                    h2.is-size-2.has-text-weight-bold.blue Convenios
+                    .columns.is-multiline.has-text-centered.is-mobile
+                        .column.is-4(v-for="i in ['axxa', 'allianz', 'bupa', 'gnp', 'mapfre', 'metlife', 'zurich', 'atlas', 'monterrey']"): img(:src="'app/img/conv/'+i+'.png'", :alt="i").is-fullwidth
+
+            #galeria: section.section
+                .container
+                    h2.is-size-2.has-text-weight-bold.pink Galería
+                    .columns.is-multiline.has-text-centered.is-mobile
+                        .column.is-4(v-for="(i, index) in 12" :key="index")
+                            .item-gal(@click="opengal(index)")
+                                img(:src="'app/img/gal/i'+i+'.jpg'", alt="Otorrinos Especializados en Santa Fé").is-fullwidth
+                            .modal.is-active(v-if="visibleModal(index)" @click="closegal(index)")
+                                .modal-background
+                                .modal-content.animate__animated.animate__zoomIn: img(:src="'app/img/gal/i'+i+'.jpg'", alt="Otorrinos Especializados en Santa Fé")
+
+            section.section#contacto
+                .container
+                    h2.is-size-2.has-text-weight-bold.blue Contacto
+                    .columns.is-vcentered
+                        .column.is-6.map
+                            .mapframe
+                                | <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.2808566061412!2d-99.28576468459586!3d19.356987986927322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20735db764145%3A0xb7183a1015e4abe6!2sOtorrinos%20Especializados%20en%20Santa%20Fe!5e0!3m2!1ses-419!2smx!4v1597192027088!5m2!1ses-419!2smx" width="100%" height="420px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        .column.is-6
+                            address
+                                p
+                                    strong.pink Sucursal Santa Fe
+                                p
+                                    | Av. Vasco de Quiroga No 4299
+                                    br
+                                    | Piso 9, Consultorio 904, Col Santa Fe
+                                    br
+                                    | Ciudad de México. (frente a Hospital ABC)
+                                p.pink
+                                    | Tel.: #[a(href="tel:5558121322") 55 5812 1322]
+                                    br
+                                    | Tel.: #[a(href="tel:5553437641") 55 5343 7641]
+
+            footer
+                .columns.socials.is-mobile.is-centered.is-gapless
+                    .column.is-narrow(v-for="item in social"): a(:href="item.link"): i(:class="item.icon")
+                #footer: .container
+                    .columns
+                        p #[strong Otorrinos Especializados de Santa Fé].  Todos los derechos reservados 2020.
+                        a(@click="aviso = true") Aviso de privacidad
+            b-modal(:active.sync="aviso")
+                .card.aviso: .card-content
+                    include _aviso.pug
+
+        script(src="https://unpkg.com/vue")
+        script(src="https://unpkg.com/buefy/dist/buefy.min.js")
+        script(src="http://unpkg.com/vue2-filters")
+        script(src="https://unpkg.com/lodash")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js")
+        script(src="app/app.js")
