@@ -26,7 +26,7 @@ var app = new Vue({
                 { link: 'https://www.youtube.com/channel/UCdK7GCx5Ts0-Rpx7n1G5KrQ?view_as=subscriber', icon: 'fab fa-youtube' },
                 { link: 'https://www.instagram.com/otorrinossantafe/', icon: 'fab fa-instagram' },
                 { link: 'https://twitter.com/FeOtorrinos', icon: 'fab fa-twitter' },
-                { link: 'https://web.whatsapp.com/send?phone=5215554028656&text=Hola%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20servicios', icon: 'fab fa-whatsapp' },
+                { link: 'https://wa.me/5215554028656?textHola%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20servicios', icon: 'fab fa-whatsapp' },
             ]
         }
     },
