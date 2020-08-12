@@ -137,6 +137,9 @@ header{
 
 #nosotros{
     p {margin: 40px 0;}
+    iframe{
+        height: 280px;
+    }
 }
 
 .bannerA{
@@ -155,7 +158,8 @@ header{
         position: absolute;
         top: 0;
         left: 0; 
-        width: 100%;
+        width: 80%;
+        margin-left: 10%;
         height: 100%;
         color: #fff;
         z-index: 1;
@@ -163,6 +167,10 @@ header{
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media (max-width: 680px){
+            h3.is-size-4{ font-size: 1rem !important;}
+            h3.is-size-3{ font-size: 1.3rem !important;}
+        }
     }
 }
 
@@ -327,5 +335,21 @@ footer{
     padding: 40px 10px;
     p {
         margin: 20px;
+    }
+}
+
+
+.whatsapp{
+    position: absolute;
+    right: 0;
+    top: 56px;
+    padding: 2px 14px;
+    font-size: 1.4rem;
+    background-image: linear-gradient(#59D064, #36B23E);
+    color: #fff;
+    border-radius: 6px 0 0 6px;
+    &:hover{
+        .gradientblue;
+        color:#fff;
     }
 }
